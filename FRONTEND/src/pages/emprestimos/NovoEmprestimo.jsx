@@ -1,29 +1,36 @@
 import "./Emprestimos.css"
+import { useState } from "react";
 function NovoEmprestimo() {
+    const [matricula, setMatricula] = useState("");
+    const [nome, setNome] = useState("");
     return (
         <div>
-            <h1>Empréstimo & Cadastro</h1>
+            <h1>Novo Empréstimo</h1>
 
             <form action="#" id="emprestimo">
 
                 <section id="dadosaluno">
                     <h2>Aluno</h2>
 
-                    <label htmlFor="matricula">Matrícula</label>
+                    <label htmlFor="matricula">Matrícula: </label>
                     <input
                         type="number"
                         id="matricula"
                         name="matricula"
+                        value={matricula}
+                        onChange={(e) => setMatricula(e.target.value)}
                     />
 
                     <br />
                     <br />
 
-                    <label htmlFor="nome">Nome do Aluno</label>
+                    <label htmlFor="nome">Nome do Aluno: </label>
                     <input
                         type="text"
                         id="nome"
                         name="nome"
+                        value={nome}
+                        onChange={(e) => setNome(e.target.value)}
                     />
 
                     <br />
@@ -33,7 +40,7 @@ function NovoEmprestimo() {
                 <section>
                     <h2>Livro</h2>
 
-                    <label htmlFor="tituloDoLivro">Título do livro</label>
+                    <label htmlFor="tituloDoLivro">Título do livro: </label>
                     <input
                         type="text"
                         id="tituloDoLivro"
@@ -43,7 +50,7 @@ function NovoEmprestimo() {
                     <br />
                     <br />
 
-                    <label htmlFor="autor">Autor</label>
+                    <label htmlFor="autor">Autor: </label>
                     <input
                         type="text"
                         id="autor"
@@ -58,7 +65,7 @@ function NovoEmprestimo() {
                     <h2>Empréstimo</h2>
 
                     <label htmlFor="dataEmprestimo">
-                        Data do Empréstimo
+                        Data do Empréstimo: 
                     </label>
 
                     <input
@@ -71,7 +78,7 @@ function NovoEmprestimo() {
                     <br />
 
                     <label htmlFor="dataDevolucao">
-                        Data de Devolução
+                        Data de Devolução: 
                     </label>
 
                     <input

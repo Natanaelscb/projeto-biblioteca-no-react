@@ -1,7 +1,7 @@
-import "./emprestimos.css"
-import { Link } from "react-router-dom";
-import NovoEmprestimo from "./NovoEmprestimo"
+import "./Emprestimos.css"
+import { useNavigate } from "react-router-dom";
 function Emprestimos() {
+    const navigate =useNavigate()
     return (
         <div className="emprestimos-container">
             <header className="topbar">
@@ -30,9 +30,7 @@ function Emprestimos() {
                         </div>
                     </div>
                     <div>
-                        <Link to="/novo-emprestimo" className="btn-novo-emprestimo">
-                            Novo Empréstimo
-                        </Link>
+                        <button onClick={()=> navigate('/emprestimos/novo')}>Novo Empréstimo</button>
                     </div>
 
                 </div>
