@@ -1,0 +1,28 @@
+backend/
+├── prisma/
+│   └── schema.prisma
+├── src/
+│   ├── config/
+│   │   └── database.js
+│   ├── controllers/
+│   │   ├── usuarioController.js
+│   │   ├── livroController.js
+│   │   └── emprestimoController.js
+│   ├── services/
+│   │   ├── usuarioService.js
+│   │   ├── livroService.js
+│   │   └── emprestimoService.js
+│   ├── routes/
+│   │   ├── usuarioRoutes.js
+│   │   ├── livroRoutes.js
+│   │   ├── emprestimoRoutes.js
+│   │   └── index.js
+│   ├── middlewares/
+│   │   ├── errorHandler.js
+│   │   └── authMiddleware.js
+│   ├── utils/
+│   ├── app.js
+│   └── server.js
+├── .env
+├── package.json
+└── package-lock.json

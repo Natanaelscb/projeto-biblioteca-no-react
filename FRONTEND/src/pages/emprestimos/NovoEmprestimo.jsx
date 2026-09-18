@@ -1,8 +1,15 @@
+import { useNavigate } from "react-router-dom";
 import "./Emprestimos.css"
 import { useState } from "react";
 function NovoEmprestimo() {
+    const navigate = useNavigate();
     const [matricula, setMatricula] = useState("");
     const [nome, setNome] = useState("");
+    const [mensagemSucesso, SetMensagemSucesso] = useState(false)
+    function handleSubmit(e) {
+        pass
+    };
+
     return (
         <div>
             <h1>Novo Empréstimo</h1>
@@ -65,7 +72,7 @@ function NovoEmprestimo() {
                     <h2>Empréstimo</h2>
 
                     <label htmlFor="dataEmprestimo">
-                        Data do Empréstimo: 
+                        Data do Empréstimo:
                     </label>
 
                     <input
@@ -78,7 +85,7 @@ function NovoEmprestimo() {
                     <br />
 
                     <label htmlFor="dataDevolucao">
-                        Data de Devolução: 
+                        Data de Devolução:
                     </label>
 
                     <input
