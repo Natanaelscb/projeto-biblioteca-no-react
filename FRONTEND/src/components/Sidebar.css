@@ -7,14 +7,30 @@ body {
     font-family: Arial, sans-serif;
 }
 
+button,
+input {
+    font-family: inherit;
+}
+
 .app {
     display: flex;
     min-height: 100vh;
+    background: #f8fafc;
 }
+
+/* =========================
+   SIDEBAR
+========================= */
 
 .sidebar {
     width: 245px;
-    min-height: 100vh;
+    flex-shrink: 0;
+
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    align-self: flex-start;
+    overflow-y: auto;
 
     background: #062b5c;
     color: white;
@@ -88,7 +104,33 @@ body {
     opacity: 0.7;
 }
 
+/* =========================
+   CONTEÚDO
+========================= */
+
 main {
     flex: 1;
-    padding: 40px;
+    min-width: 0;
+    /* deixa o overflow-x da tabela funcionar */
+    padding: 24px;
+}
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media (max-width: 768px) {
+    .app {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: static;
+    }
+
+    main {
+        padding: 14px;
+    }
 }

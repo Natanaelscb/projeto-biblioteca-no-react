@@ -1,0 +1,499 @@
+/* ================================
+   PÁGINA NOVO USUÁRIO
+================================ */
+
+.novo-usuario-page {
+    width: 100%;
+    min-height: 100vh;
+    padding: 20px 28px;
+    box-sizing: border-box;
+    background: #f8fafc;
+    color: #0f172a;
+}
+
+
+/* ================================
+   CABEÇALHO
+================================ */
+
+.novo-usuario-header {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 28px;
+}
+
+.novo-usuario-header h1 {
+    margin: 0 0 5px;
+    font-size: 27px;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.novo-usuario-breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: #475569;
+}
+
+.novo-usuario-breadcrumb button {
+    border: none;
+    background: transparent;
+    padding: 0;
+    color: #2563eb;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.novo-usuario-breadcrumb button:hover {
+    text-decoration: underline;
+}
+
+.novo-usuario-breadcrumb svg {
+    color: #94a3b8;
+}
+
+
+/* ================================
+   BOTÃO LISTA
+================================ */
+
+.novo-usuario-lista-btn {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    padding: 12px 18px;
+
+    border: 1px solid #dbe3ee;
+    border-radius: 9px;
+
+    background: #ffffff;
+    color: #0f172a;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    box-shadow: 0 2px 5px rgba(15, 23, 42, 0.05);
+
+    transition: 0.2s ease;
+}
+
+.novo-usuario-lista-btn svg {
+    color: #64748b;
+}
+
+.novo-usuario-lista-btn:hover {
+    background: #f8fafc;
+    border-color: #cbd5e1;
+}
+
+
+/* ================================
+   CARD
+================================ */
+
+.novo-usuario-card {
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 38px 36px;
+
+    background: #ffffff;
+
+    border: 1px solid #dbe3ee;
+    border-radius: 14px;
+
+    box-shadow: 0 2px 5px rgba(15, 23, 42, 0.04);
+}
+
+
+/* ================================
+   CABEÇALHO DO CARD
+================================ */
+
+.novo-usuario-card-header h2 {
+    margin: 0 0 5px;
+
+    font-size: 20px;
+    font-weight: 600;
+
+    color: #0f172a;
+}
+
+.novo-usuario-card-header p {
+    margin: 0;
+
+    font-size: 15px;
+    line-height: 1.5;
+
+    color: #64748b;
+}
+
+
+/* ================================
+   DIVISÓRIA
+================================ */
+
+.novo-usuario-divider {
+    width: 72%;
+    height: 1px;
+
+    margin: 18px 0 27px;
+
+    background: #e5eaf0;
+}
+
+
+/* ================================
+   GRID DOS CAMPOS
+================================ */
+
+.novo-usuario-grid {
+    width: 72%;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 22px;
+
+    margin-bottom: 21px;
+}
+
+
+/* ================================
+   CAMPOS
+================================ */
+
+.novo-usuario-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.novo-usuario-field label,
+.novo-usuario-status-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: #1e3a5f;
+}
+
+.novo-usuario-field label span,
+.novo-usuario-status-title span {
+    color: #ef4444;
+}
+
+
+/* ================================
+   INPUT
+================================ */
+
+.novo-usuario-input-wrapper {
+    height: 46px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 13px;
+
+    box-sizing: border-box;
+
+    border: 1px solid #d9e1eb;
+    border-radius: 8px;
+
+    background: #f8fafc;
+
+    transition: 0.2s ease;
+}
+
+.novo-usuario-input-wrapper svg {
+    flex-shrink: 0;
+    color: #94a8c2;
+}
+
+.novo-usuario-input-wrapper input {
+    width: 100%;
+    height: 100%;
+
+    margin-left: 10px;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    color: #1e293b;
+    font-size: 15px;
+}
+
+.novo-usuario-input-wrapper input::placeholder {
+    color: #91a4bf;
+}
+
+.novo-usuario-input-wrapper:focus-within {
+    border-color: #2563eb;
+
+    background: #ffffff;
+
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.08);
+}
+
+
+/* ================================
+   STATUS
+================================ */
+
+.novo-usuario-status {
+    width: 72%;
+    margin-top: 5px;
+}
+
+.novo-usuario-status-title {
+    display: block;
+    margin-bottom: 9px;
+}
+
+.novo-usuario-status-options {
+    display: flex;
+    gap: 26px;
+}
+
+.novo-usuario-status-option {
+    width: 212px;
+    height: 52px;
+
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 14px;
+
+    border: 1px solid #dbe3ee;
+    border-radius: 9px;
+
+    background: #ffffff;
+
+    color: #1e293b;
+
+    font-size: 15px;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.novo-usuario-status-option:hover {
+    border-color: #b9c6d6;
+}
+
+.novo-usuario-status-option input {
+    display: none;
+}
+
+
+/* Radio */
+
+.novo-usuario-radio {
+    width: 17px;
+    height: 17px;
+
+    margin-right: 10px;
+
+    box-sizing: border-box;
+
+    border: 1px solid #94a3b8;
+    border-radius: 50%;
+
+    position: relative;
+}
+
+.novo-usuario-status-option.selecionado .novo-usuario-radio {
+    border: 2px solid #2563eb;
+}
+
+.novo-usuario-status-option.selecionado .novo-usuario-radio::after {
+    content: "";
+
+    position: absolute;
+
+    width: 7px;
+    height: 7px;
+
+    top: 3px;
+    left: 3px;
+
+    border-radius: 50%;
+
+    background: #2563eb;
+}
+
+
+/* Bolinha de status */
+
+.novo-usuario-status-dot {
+    width: 9px;
+    height: 9px;
+
+    border-radius: 50%;
+
+    margin-right: 8px;
+}
+
+.novo-usuario-status-dot.ativo {
+    background: #10b981;
+}
+
+.novo-usuario-status-dot.inativo {
+    background: #f43f5e;
+}
+
+
+/* ================================
+   DIVISÓRIA INFERIOR
+================================ */
+
+.novo-usuario-divider-bottom {
+    width: 72%;
+    height: 1px;
+
+    margin-top: 25px;
+
+    background: #e5eaf0;
+}
+
+
+/* ================================
+   AÇÕES
+================================ */
+
+.novo-usuario-actions {
+    width: 72%;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    gap: 13px;
+
+    margin-top: 27px;
+}
+
+.novo-usuario-cancelar,
+.novo-usuario-salvar {
+    height: 46px;
+
+    padding: 0 21px;
+
+    border-radius: 8px;
+
+    font-size: 15px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+
+/* Cancelar */
+
+.novo-usuario-cancelar {
+    border: 1px solid #dbe3ee;
+    background: #ffffff;
+
+    color: #1e3a5f;
+}
+
+.novo-usuario-cancelar:hover {
+    background: #f8fafc;
+}
+
+
+/* Salvar */
+
+.novo-usuario-salvar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    min-width: 187px;
+
+    border: none;
+
+    background: #2563eb;
+
+    color: #ffffff;
+
+    box-shadow: 0 2px 5px rgba(37, 99, 235, 0.2);
+}
+
+.novo-usuario-salvar:hover {
+    background: #1d4ed8;
+}
+
+.novo-usuario-salvar:active {
+    transform: translateY(1px);
+}
+
+
+/* ================================
+   RESPONSIVIDADE
+================================ */
+
+@media (max-width: 900px) {
+
+    .novo-usuario-page {
+        padding: 20px;
+    }
+
+    .novo-usuario-card {
+        padding: 30px 25px;
+    }
+
+    .novo-usuario-grid,
+    .novo-usuario-status,
+    .novo-usuario-divider,
+    .novo-usuario-divider-bottom,
+    .novo-usuario-actions {
+        width: 100%;
+    }
+
+}
+
+@media (max-width: 700px) {
+
+    .novo-usuario-header {
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    .novo-usuario-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .novo-usuario-status-options {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .novo-usuario-status-option {
+        width: 100%;
+    }
+
+    .novo-usuario-actions {
+        justify-content: stretch;
+    }
+
+    .novo-usuario-cancelar,
+    .novo-usuario-salvar {
+        flex: 1;
+    }
+
+}

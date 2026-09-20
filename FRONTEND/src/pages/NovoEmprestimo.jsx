@@ -2,13 +2,13 @@ import { useNavigate } from "react-router-dom";
 import "./Emprestimos.css"
 import { useState } from "react";
 function NovoEmprestimo() {
-    const navigate = useNavigate();
+   /*  const navigate = useNavigate();
     const [matricula, setMatricula] = useState("");
     const [nome, setNome] = useState("");
     const [mensagemSucesso, SetMensagemSucesso] = useState(false)
     function handleSubmit(e) {
         pass
-    };
+    }; */
 
     return (
         <div>
@@ -25,7 +25,7 @@ function NovoEmprestimo() {
                         id="matricula"
                         name="matricula"
                         value={matricula}
-                        onChange={(e) => setMatricula(e.target.value)}
+                       /*  onChange={(e) => setMatricula(e.target.value)} */
                     />
 
                     <br />
@@ -37,7 +37,7 @@ function NovoEmprestimo() {
                         id="nome"
                         name="nome"
                         value={nome}
-                        onChange={(e) => setNome(e.target.value)}
+                       /*  onChange={(e) => setNome(e.target.value)} */
                     />
 
                     <br />

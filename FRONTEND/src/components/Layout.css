@@ -15,5 +15,6 @@
     margin-left: 260px;
     
     padding: 24px;
-    width: 100%;
+    width: calc(100% - 260px);
+    box-sizing: border-box;
 }

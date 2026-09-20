@@ -1,0 +1,549 @@
+* {
+    box-sizing: border-box;
+}
+
+.livros-page {
+    width: 100%;
+    min-height: 100vh;
+    padding: 20px 28px;
+    background: #f8fafc;
+    color: #172033;
+}
+
+/* =========================
+   CABEÇALHO
+========================= */
+
+.livros-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.livros-header h1 {
+    margin: 0;
+    font-size: 34px;
+    font-weight: 700;
+    color: #111827;
+}
+
+.btn-novo-livro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    height: 46px;
+    padding: 0 18px;
+
+    border: none;
+    border-radius: 7px;
+
+    background: #123ca6;
+    color: white;
+
+    font-size: 15px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.btn-novo-livro:hover {
+    background: #0d2f86;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.livros-card {
+    width: 100%;
+    background: white;
+
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+
+    padding: 14px 8px 10px;
+
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+/* =========================
+   FILTROS
+========================= */
+
+.livros-filtros {
+    display: grid;
+
+    grid-template-columns: 1.9fr 0.85fr 0.85fr 0.55fr;
+
+    gap: 10px;
+
+    padding: 0 7px 14px;
+}
+
+/* PESQUISA */
+
+.campo-pesquisa {
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    gap: 11px;
+
+    padding: 0 14px;
+
+    border: 1px solid #d9e0ea;
+    border-radius: 8px;
+
+    color: #111827;
+
+    background: white;
+}
+
+.campo-pesquisa svg {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+}
+
+.campo-pesquisa input {
+    width: 100%;
+    height: 100%;
+
+    border: none;
+    outline: none;
+
+    font-size: 14px;
+    color: #1e293b;
+}
+
+.campo-pesquisa input::placeholder {
+    color: #475569;
+}
+
+/* SELECT */
+
+.select-container {
+    position: relative;
+    height: 48px;
+}
+
+.select-container select {
+    width: 100%;
+    height: 100%;
+
+    appearance: none;
+
+    padding: 0 38px 0 15px;
+
+    border: 1px solid #d9e0ea;
+    border-radius: 8px;
+
+    background: white;
+
+    font-size: 14px;
+    color: #111827;
+
+    outline: none;
+
+    cursor: pointer;
+}
+
+.select-container svg {
+    position: absolute;
+
+    right: 13px;
+    top: 14px;
+
+    width: 19px;
+    height: 19px;
+
+    pointer-events: none;
+}
+
+/* BOTÃO FILTROS */
+
+.btn-filtros {
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    background: white;
+
+    border: 1px solid #d9e0ea;
+    border-radius: 8px;
+
+    color: #1644b5;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.btn-filtros:hover {
+    background: #f1f5ff;
+}
+
+/* =========================
+   TABELA
+========================= */
+
+.tabela-container {
+    width: 100%;
+
+    overflow-x: auto;
+
+    border: 1px solid #dce3ec;
+    border-radius: 9px;
+}
+
+table {
+    width: 100%;
+
+    min-width: 950px;
+
+    border-collapse: collapse;
+}
+
+thead {
+    background: #123b91;
+    color: white;
+}
+
+thead th {
+    height: 44px;
+
+    padding: 0 14px;
+
+    text-align: left;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+thead th:first-child {
+    border-top-left-radius: 8px;
+}
+
+thead th:last-child {
+    border-top-right-radius: 8px;
+}
+
+/* LINHAS */
+
+tbody tr {
+    height: 72px;
+
+    border-bottom: 1px solid #e3e8ef;
+
+    transition: background 0.15s;
+}
+
+tbody tr:last-child {
+    border-bottom: none;
+}
+
+tbody tr:hover {
+    background: #f8faff;
+}
+
+tbody td {
+    padding: 5px 14px;
+
+    font-size: 14px;
+    color: #172033;
+
+    vertical-align: middle;
+}
+
+/* =========================
+   CAPA
+========================= */
+
+.capa-livro {
+    width: 55px;
+    height: 62px;
+
+    object-fit: cover;
+
+    border-radius: 5px;
+
+    display: block;
+
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+}
+
+.titulo-livro {
+    font-weight: 600;
+
+    color: #111827;
+
+    max-width: 200px;
+}
+
+/* =========================
+   STATUS
+========================= */
+
+.status {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+
+    padding: 5px 10px;
+
+    border-radius: 7px;
+
+    font-size: 13px;
+
+    white-space: nowrap;
+}
+
+.status-bolinha {
+    width: 9px;
+    height: 9px;
+
+    border-radius: 50%;
+}
+
+/* DISPONÍVEL */
+
+.status.disponivel {
+    background: #e8f8ed;
+    color: #148528;
+}
+
+.status.disponivel .status-bolinha {
+    background: #0b932b;
+}
+
+/* EMPRESTADO */
+
+.status.emprestado {
+    background: #fff3df;
+    color: #d47a00;
+}
+
+.status.emprestado .status-bolinha {
+    background: #df8500;
+}
+
+/* =========================
+   AÇÕES
+========================= */
+
+.acoes {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.acoes button {
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: white;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.btn-editar {
+    border: 1.5px solid #73a0ff;
+    color: #1260dc;
+}
+
+.btn-editar:hover {
+    background: #eff5ff;
+}
+
+.btn-excluir {
+    border: 1.5px solid #ff7b7b;
+    color: #ff1f1f;
+}
+
+.btn-excluir:hover {
+    background: #fff1f1;
+}
+
+/* =========================
+   PAGINAÇÃO
+========================= */
+
+.paginacao {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    padding-top: 8px;
+}
+
+.pagina,
+.pagina-seta {
+    width: 35px;
+    height: 35px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #dce3ec;
+    border-radius: 7px;
+
+    background: white;
+
+    font-size: 14px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.pagina:hover,
+.pagina-seta:hover {
+    background: #f1f5ff;
+}
+
+.pagina.ativa {
+    background: #123b91;
+
+    color: white;
+
+    border-color: #123b91;
+}
+
+.pagina-reticencias {
+    padding: 0 4px;
+
+    font-size: 16px;
+
+    color: #475569;
+}
+
+/* =========================
+   NOTEBOOK / TELAS MENORES
+========================= */
+
+@media (max-width: 1100px) {
+
+    .livros-page {
+        padding: 18px 20px;
+    }
+
+    .livros-filtros {
+        grid-template-columns: 1.6fr 1fr 1fr;
+    }
+
+    .btn-filtros {
+        grid-column: span 1;
+    }
+
+    .tabela-container {
+        overflow-x: auto;
+    }
+}
+
+/* =========================
+   TELAS BEM PEQUENAS
+========================= */
+
+@media (max-width: 850px) {
+
+    .livros-page {
+        padding: 15px;
+    }
+
+    .livros-header h1 {
+        font-size: 30px;
+    }
+
+    .livros-filtros {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .campo-pesquisa {
+        grid-column: span 2;
+    }
+
+    .btn-filtros {
+        grid-column: span 2;
+    }
+}
+@media (max-width: 850px) {
+    .livros-page {
+        padding: 15px;
+    }
+
+    .livros-header h1 {
+        font-size: 30px;
+    }
+
+    .livros-filtros {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .campo-pesquisa {
+        grid-column: span 2;
+    }
+
+    .btn-filtros {
+        grid-column: span 2;
+    }
+}
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 480px) {
+    .livros-header {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+    }
+
+    .btn-novo-livro {
+        width: 100%;
+    }
+
+    .livros-page {
+        padding: 12px;
+    }
+
+    .livros-card {
+        padding: 10px 6px 8px;
+    }
+
+    .capa-livro {
+        width: 42px;
+        height: 48px;
+    }
+
+    tbody tr {
+        height: auto;
+    }
+
+    tbody td {
+        padding: 10px 10px;
+    }
+}

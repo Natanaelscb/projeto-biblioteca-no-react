@@ -1,0 +1,460 @@
+/* ================================
+   PÁGINA DE USUÁRIOS
+================================ */
+
+.usuarios-page {
+    width: 100%;
+    min-height: 100vh;
+    padding: 28px 36px;
+    box-sizing: border-box;
+    background: #f5f7fb;
+    color: #1e293b;
+}
+
+/* ================================
+   CABEÇALHO
+================================ */
+
+.usuarios-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 24px;
+}
+
+.usuarios-header h1 {
+    margin: 0;
+    font-size: 36px;
+    font-weight: 600;
+    color: #172033;
+}
+
+.usuarios-header p {
+    margin: 5px 0 0;
+    color: #64748b;
+    font-size: 14px;
+}
+
+.btn-novo-usuario {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    height: 42px;
+    padding: 0 18px;
+
+    border: none;
+    border-radius: 5px;
+
+    background: #1e5aa8;
+    color: white;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-novo-usuario:hover {
+    background: #174985;
+}
+
+/* ================================
+   FILTROS
+================================ */
+
+.filtros-card {
+    width: 100%;
+    min-height: 92px;
+
+    display: flex;
+    align-items: center;
+    gap: 26px;
+
+    padding: 18px;
+    box-sizing: border-box;
+
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+
+    margin-bottom: 16px;
+}
+
+/* Pesquisa */
+
+.campo-pesquisa {
+    width: 320px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    padding: 0 11px;
+    box-sizing: border-box;
+
+    background: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+
+    color: #64748b;
+}
+
+.campo-pesquisa input {
+    width: 100%;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    font-size: 14px;
+    color: #334155;
+}
+
+.campo-pesquisa input::placeholder {
+    color: #94a3b8;
+}
+
+/* Grupo */
+
+.filtro-grupo {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.filtro-grupo label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #1e293b;
+}
+
+.filtro-botoes {
+    display: flex;
+    gap: 8px;
+}
+
+.filtro-botoes button {
+    height: 34px;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 0 11px;
+
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+
+    background: #eef1f5;
+    color: #475569;
+
+    font-size: 13px;
+
+    cursor: pointer;
+}
+
+.filtro-botoes button:hover {
+    border-color: #94a3b8;
+    background: #e2e8f0;
+}
+
+/* ================================
+   TABELA
+================================ */
+
+.tabela-card {
+    width: 100%;
+
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+
+    overflow: hidden;
+}
+
+.tabela-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.tabela-container table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 850px;
+}
+
+.tabela-container th {
+    height: 52px;
+
+    text-align: left;
+
+    padding: 0 17px;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    color: #d9dce1;
+
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.tabela-container td {
+    height: 54px;
+
+    padding: 0 17px;
+
+    font-size: 14px;
+
+    color: #475569;
+
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.tabela-container tbody tr:hover {
+    background: #f8fafc;
+}
+
+.tabela-container tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.nome-usuario {
+    font-weight: 500;
+    color: #1e293b !important;
+}
+
+.email-usuario {
+    color: #64748b !important;
+}
+
+/* ================================
+   FOTO
+================================ */
+
+.foto-usuario {
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #e8edf3;
+    border: 1px solid #cbd5e1;
+
+    color: #64748b;
+}
+
+.foto-usuario span {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/* ================================
+   STATUS
+================================ */
+
+.status {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 70px;
+    height: 28px;
+
+    padding: 0 12px;
+
+    border-radius: 20px;
+
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.status.ativo {
+    background: #55b96f;
+    color: white;
+}
+
+.status.inativo {
+    background: #6c757d;
+    color: white;
+}
+
+.status.bloqueado {
+    background: #dc3545;
+    color: white;
+}
+
+/* ================================
+   AÇÕES
+================================ */
+
+.acoes {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.acao {
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    border-radius: 5px;
+
+    color: white;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.acao.editar {
+    background: #1e5aa8;
+}
+
+.acao.editar:hover {
+    background: #174985;
+}
+
+.acao.excluir {
+    background: #d84b50;
+}
+
+.acao.excluir:hover {
+    background: #b9383d;
+}
+
+.acao.visualizar {
+    background: transparent;
+    color: #1e5aa8;
+}
+
+.acao.visualizar:hover {
+    background: #eef4fb;
+}
+
+/* ================================
+   PAGINAÇÃO
+================================ */
+
+.paginacao {
+    height: 62px;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: 5px;
+
+    padding: 0 20px;
+
+    border-top: 1px solid #e2e8f0;
+}
+
+.pagina,
+.pagina-seta {
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    border-radius: 5px;
+
+    background: transparent;
+
+    color: #475569;
+
+    cursor: pointer;
+}
+
+.pagina:hover,
+.pagina-seta:hover {
+    background: #eef2f7;
+}
+
+.pagina.ativa {
+    background: #1e5aa8;
+    color: white;
+}
+
+.pagina-seta {
+    color: #64748b;
+}
+
+/* ================================
+   RESPONSIVO
+================================ */
+
+@media (max-width: 1100px) {
+    .usuarios-page {
+        padding: 22px 24px;
+    }
+
+    .filtros-card {
+        flex-wrap: wrap;
+        align-items: flex-end;
+    }
+
+    .campo-pesquisa {
+        width: 280px;
+    }
+}
+
+@media (max-width: 800px) {
+    .usuarios-page {
+        padding: 18px;
+    }
+
+    .usuarios-header h1 {
+        font-size: 30px;
+    }
+
+    .usuarios-header {
+        align-items: center;
+    }
+
+    .filtros-card {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .campo-pesquisa {
+        width: 100%;
+    }
+}
+
+@media (max-width: 550px) {
+    .usuarios-page {
+        padding: 14px;
+    }
+
+    .usuarios-header {
+        flex-direction: column;
+        gap: 14px;
+        align-items: stretch;
+    }
+
+    .btn-novo-usuario {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .filtro-botoes {
+        flex-wrap: wrap;
+    }
+}

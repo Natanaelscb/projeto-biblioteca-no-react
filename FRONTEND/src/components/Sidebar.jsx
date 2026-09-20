@@ -1,25 +1,27 @@
 import { NavLink } from "react-router-dom";
-import "./Sidebar.css"
+import "./Sidebar.css";
 import {
-    Home,
-    BookOpen,
-    ArrowLeftRight,
-    RotateCcw,
-    Users,
-    CalendarCheck,
-    BarChart3,
-    Settings
+    Home, BookOpen, ArrowLeftRight, RotateCcw,
+    Users, CalendarCheck, BarChart3, Settings,
 } from "lucide-react";
 
-
+const menuItems = [
+    { to: "/", label: "Início", icon: Home, end: true },
+    { to: "/emprestimos", label: "Empréstimos", icon: ArrowLeftRight },
+    
+    { to: "/devolucoes", label: "Devoluções", icon: RotateCcw },
+    { to: "/livros", label: "Livros", icon: BookOpen },
+    { to: "/usuarios", label: "Usuários", icon: Users },
+    { to: "/reservas", label: "Reservas", icon: CalendarCheck },
+    { to: "/relatorios", label: "Relatórios", icon: BarChart3 },
+    { to: "/configuracoes", label: "Configurações", icon: Settings },
+];
 
 function Sidebar() {
     return (
         <aside className="sidebar">
-
             <div className="sidebar-brand">
                 <BookOpen size={40} />
-
                 <div>
                     <h2>Biblioteca</h2>
                     <span>Empréstimos</span>
@@ -27,69 +29,18 @@ function Sidebar() {
             </div>
 
             <nav className="sidebar-nav">
-
-                <NavLink
-                    to="/"
-                    className={({ isActive }) =>
-                        isActive ? "sidebar-item active" : "sidebar-item"
-                    }
-                >
-                    <Home size={24} />
-                    <span>Início</span>
-                </NavLink>
-
-
-                <NavLink
-                    to="/emprestimos"
-                    className={({ isActive }) =>
-                        isActive ? "sidebar-item active" : "sidebar-item"
-                    }
-                >
-                    <Home size={24} />
-                    <span>Empréstimos</span>
-                </NavLink>
-
-                <a href="#">
-                    <RotateCcw size={24} />
-                    <span>Devoluções</span>
-                </a>
-
-                <NavLink
-                    to="/Livros"
-                    className={({ isActive }) =>
-                        isActive ? "sidebar-item active" : "sidebar-item"
-                    }
-                >
-                    <BookOpen size={24} />
-                    <span>Livros</span>
-                </NavLink>
-                <a href="#">
-                    <Users size={24} />
-                    <span>Usuários</span>
-                </a>
-
-                <a href="#">
-                    <CalendarCheck size={24} />
-                    <span>Reservas</span>
-                </a>
-
-                <a href="#">
-                    <BarChart3 size={24} />
-                    <span>Relatórios</span>
-                </a>
-
-                <a href="#">
-                    <Settings size={24} />
-                    <span>Configurações</span>
-                </a>
-
+                {menuItems.map(({ to, label, icon: Icon, end }) => (
+                    <NavLink key={to} to={to} end={end} className="sidebar-item">
+                        <Icon size={24} />
+                        <span>{label}</span>
+                    </NavLink>
+                ))}
             </nav>
 
             <div className="sidebar-user">
                 <strong>Administrador</strong>
                 <span>admin@biblioteca.com</span>
             </div>
-
         </aside>
     );
 }

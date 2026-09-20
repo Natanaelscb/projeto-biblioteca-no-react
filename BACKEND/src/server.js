@@ -8,7 +8,10 @@ app.use(express.json());
 
 app.use(cors());
 
-app.get("/usuarios", async (req,res) => {
+const usuarioRoutes = require('./routes/usuarioRoutes')
+app.use('/novoUser',usuarioRoutes)
+
+/*app.get("/usuarios", async (req,res) => {
     const usuarios = await prisma.usuario.findMany()
     res.json(usuarios);
 })
@@ -25,7 +28,7 @@ app.post("/usuarios", async (req,res) => {
     res.json(usuario);
 
 });
-
+*/
 
 
 app.listen(3001, () => {

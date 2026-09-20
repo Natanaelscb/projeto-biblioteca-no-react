@@ -1,7 +1,7 @@
 .emprestimos-page {
   width: 100%;
   min-height: 100vh;
-  padding: 32px;
+  padding: 8px;
   background: #f8fafc;
   box-sizing: border-box;
 }
@@ -15,7 +15,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 28px;
+  margin-bottom: 20px;
 }
 
 .emprestimos-header h1 {
@@ -54,18 +54,20 @@
 .btn-novo {
   display: flex;
   align-items: center;
-  gap: 10px;
+  justify-content: center;
+  gap: 8px;
+
+  height: 46px;
+  padding: 0 18px;
 
   border: none;
-  border-radius: 8px;
+  border-radius: 7px;
 
-  padding: 14px 22px;
-
-  background: #1264f5;
+  background: #123ca6;
   color: white;
 
-  font-size: 16px;
-  font-weight: 600;
+  font-size: 15px;
+  font-weight: 500;
 
   cursor: pointer;
 
@@ -101,13 +103,13 @@
   justify-content: space-between;
   align-items: center;
 
-  padding: 24px 22px;
+  padding: 1px 22px;
 
   border-bottom: 1px solid #e5eaf1;
 }
 
 .search-emprestimos {
-  width: 550px;
+  width: 100%;
   height: 46px;
 
   display: flex;
@@ -199,13 +201,13 @@ th {
   font-size: 15px;
   font-weight: 700;
 
-  color: #14213d;
+  color: #f5f7fb;
 
   border-bottom: 1px solid #e5eaf1;
 }
 
 td {
-  padding: 20px 22px;
+  padding: 16px 14px;
 
   border-bottom: 1px solid #e8edf3;
 
@@ -227,7 +229,7 @@ tbody tr:hover {
   display: flex;
   align-items: center;
   gap: 14px;
-  min-width: 220px;
+  min-width: 180px;
 }
 
 .avatar {
@@ -276,7 +278,7 @@ tbody tr:hover {
   align-items: center;
   gap: 14px;
 
-  min-width: 230px;
+  min-width: 190px;
 }
 
 .livro img {
@@ -389,12 +391,12 @@ tbody tr:hover {
 
 .acoes {
   display: flex;
-  gap: 10px;
+  gap: 6px;
 }
 
 .acoes button {
-  width: 48px;
-  height: 48px;
+  width: 40px;
+  height: 40px;
 
   display: flex;
   align-items: center;
@@ -552,4 +554,60 @@ tbody tr:hover {
     flex-wrap: wrap;
   }
 
+}
+
+@media (max-width: 480px) {
+
+  .emprestimos-page {
+    padding: 14px;
+  }
+
+  .emprestimos-header h1 {
+    font-size: 24px;
+  }
+
+  .breadcrumb {
+    font-size: 14px;
+  }
+
+  .toolbar-buttons {
+    gap: 12px;
+  }
+
+  .toolbar-btn {
+    padding: 0 14px;
+  }
+
+  .tabela-footer {
+    align-items: stretch;
+    text-align: center;
+  }
+
+  .paginacao {
+    justify-content: center;
+  }
+
+  .paginacao .por-pagina {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .acoes button {
+    width: 40px;
+    height: 40px;
+  }
+
+  .breadcrumb {
+    font-size: 15px;
+  }
+
+  th,
+  td {
+    font-size: 13px;
+  }
+
+  .usuario,
+  .livro {
+    min-width: 0;
+  }
 }

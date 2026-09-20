@@ -1,4 +1,4 @@
-backend/
+/*backend/
 ├── prisma/
 │   └── schema.prisma
 ├── src/
@@ -26,3 +26,81 @@ backend/
 ├── .env
 ├── package.json
 └── package-lock.json
+
+2
+
+ainda falta
+Prisma funcionar no servidor
+        ↓
+CRUD completo
+        ↓
+Regras de negócio
+        ↓
+Frontend consumir API
+        ↓
+Tratamento de erros
+        ↓
+Autenticação
+        ↓
+Testes
+        ↓
+Polimento
+
+3
+
+resumir o estágio do BookFlow:
+
+Antes:
+Projeto frontend / protótipo
+
+Agora:
+MVP full stack em construção
+
+Próximo grande marco:
+MVP funcional integrado
+
+Depois:
+Sistema refinado + autenticação + testes + deploy
+
+4
+
+Sistema
+React
+  ↓  POST http://localhost:3333/usuarios
+Express            → src/app.js                       (app.use("/usuarios", ...))
+  ↓
+Route              → src/routes/usuarios.routes.js    (router.post("/", ...))
+  ↓
+Controller         → src/controllers/usuarios.controller.js
+  ↓
+Prisma             → src/lib/prisma.js + prisma/schema.prisma
+  ↓
+PostgreSQL         → tabela "usuarios"
+
+5
+usuarioServiceexport default function NovoUsuario({ onBack, onSave }) {
+    const [formData, setFormData] = useState({
+        matricula: '',
+        nome: '',
+        email: '',
+        telefone: '',
+        status: 'Ativo',
+        tipo: 'Aluno'
+    });
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData((prev) => ({
+            ...prev,
+            [name]: value
+        }));
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        if (onSave) {
+            onSave(formData);
+        } else {
+            alert('Usuário salvo com sucesso!');
+        }
+    };*/
