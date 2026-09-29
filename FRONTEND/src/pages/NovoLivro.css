@@ -1,0 +1,306 @@
+.novo-livro {
+    min-height: 100vh;
+    background: #f5f8fc;
+    padding: 28px;
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   CABEÇALHO
+========================= */
+
+.novo-livro-header {
+    margin-bottom: 34px;
+}
+
+.novo-livro-header h1 {
+    margin: 0 0 5px 0;
+    font-size: 36px;
+    font-weight: 700;
+    color: #071a3d;
+}
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 17px;
+}
+
+.breadcrumb span {
+    color: #2563eb;
+}
+
+.breadcrumb svg {
+    color: #94a3b8;
+}
+
+.breadcrumb p {
+    margin: 0;
+    color: #334155;
+}
+
+
+/* =========================
+   CARD
+========================= */
+
+.livro-card {
+    background: #ffffff;
+    border: 1px solid #d9e2ef;
+    border-radius: 17px;
+    padding: 45px;
+    box-sizing: border-box;
+    box-shadow: 0 2px 5px rgba(15, 23, 42, 0.03);
+}
+
+
+/* =========================
+   CABEÇALHO DO CARD
+========================= */
+
+.livro-card-header {
+    padding-bottom: 25px;
+    border-bottom: 1px solid #dce4ef;
+    margin-bottom: 32px;
+}
+
+.livro-card-header h2 {
+    margin: 0 0 5px 0;
+    color: #071a3d;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.livro-card-header p {
+    margin: 0;
+    color: #64748b;
+    font-size: 19px;
+}
+
+
+/* =========================
+   GRID DOS CAMPOS
+========================= */
+
+.livro-form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 27px;
+    row-gap: 26px;
+}
+
+
+/* =========================
+   CAMPOS
+========================= */
+
+.campo-livro {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.campo-livro label {
+    font-size: 16px;
+    font-weight: 700;
+    color: #12396b;
+}
+
+.campo-livro label span {
+    color: #ef4444;
+}
+
+
+/* =========================
+   INPUT
+========================= */
+
+.input-livro {
+    height: 57px;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    border: 1px solid #d5dfec;
+    border-radius: 11px;
+
+    background: #f8fafc;
+
+    padding: 0 17px;
+
+    box-sizing: border-box;
+
+    transition: 0.2s;
+}
+
+.input-livro svg {
+    color: #8da4c5;
+    flex-shrink: 0;
+}
+
+.input-livro input,
+.input-livro select {
+    width: 100%;
+    height: 100%;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    font-size: 17px;
+    color: #1e293b;
+}
+
+.input-livro input::placeholder {
+    color: #8da4c5;
+}
+
+.input-livro select {
+    cursor: pointer;
+    color: #8da4c5;
+}
+
+
+/* quando estiver preenchido */
+.input-livro input:focus,
+.input-livro select:focus {
+    color: #1e293b;
+}
+
+.input-livro:focus-within {
+    border-color: #2563eb;
+    background: #ffffff;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.08);
+}
+
+
+/* =========================
+   RODAPÉ
+========================= */
+
+.livro-form-footer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 16px;
+
+    margin-top: 30px;
+    padding-top: 32px;
+
+    border-top: 1px solid #dce4ef;
+}
+
+
+/* =========================
+   BOTÃO CANCELAR
+========================= */
+
+.btn-cancelar-livro {
+    height: 58px;
+    padding: 0 28px;
+
+    background: #ffffff;
+
+    border: 1px solid #d5dfec;
+    border-radius: 11px;
+
+    color: #12396b;
+
+    font-size: 18px;
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.btn-cancelar-livro:hover {
+    background: #f8fafc;
+}
+
+
+/* =========================
+   BOTÃO CADASTRAR
+========================= */
+
+.btn-salvar-livro {
+    height: 58px;
+    padding: 0 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    background: #2563eb;
+
+    border: none;
+    border-radius: 11px;
+
+    color: white;
+
+    font-size: 18px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    box-shadow: 0 3px 7px rgba(37, 99, 235, 0.25);
+
+    transition: 0.2s;
+}
+
+.btn-salvar-livro:hover {
+    background: #1d4ed8;
+    transform: translateY(-1px);
+}
+
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media (max-width: 900px) {
+
+    .livro-form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .livro-card {
+        padding: 30px;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .novo-livro {
+        padding: 18px;
+    }
+
+    .novo-livro-header h1 {
+        font-size: 30px;
+    }
+
+    .livro-card {
+        padding: 22px;
+    }
+
+    .livro-card-header h2 {
+        font-size: 22px;
+    }
+
+    .livro-card-header p {
+        font-size: 16px;
+    }
+
+    .livro-form-footer {
+        flex-direction: column-reverse;
+        align-items: stretch;
+    }
+
+    .btn-cancelar-livro,
+    .btn-salvar-livro {
+        width: 100%;
+    }
+}

@@ -1,5 +1,6 @@
-import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+<!-- 
+import { buscarLivros } from "../services/livrosApi";
+import { useEffect, useState } from "react";
 import {
     Search,
     ChevronDown,
@@ -10,44 +11,23 @@ import {
     ChevronLeft,
     ChevronRight,
 } from "lucide-react";
-import { buscarLivros } from "../services/livrosApi";
 
 import "./Livros.css";
 
 function Livros() {
-
-    const navigate = useNavigate();
-
-    const [pesquisa, setPesquisa] = useState("");
-    const [livros, setLivros] = useState([]);
+    
+    const [livros,setLivros] = useState([])
 
     useEffect(() => {
-        buscarLivros().then((dados) => {
-            console.log(dados);
-            setLivros(dados);
-        });
-    }, []);
+            buscarLivros().then((dados) => {
+                console.log(dados);
+                setLivros(dados)
+            })
+    
+        }, []);
+        
 
-    const livrosFiltrados = livros.filter((livro) => {
-        const texto = pesquisa.toLowerCase();
-
-        return (
-            livro.titulo.toLowerCase().includes(texto) ||
-            livro.autor.toLowerCase().includes(texto)
-        );
-    });
-
-    function novoLivro() {
-        console.log("Abrir formulário de novo livro");
-    }
-
-    function editarLivro(id) {
-        console.log("Editar livro:", id);
-    }
-
-    function excluirLivro(id) {
-        console.log("Excluir livro:", id);
-    }
+    
 
     return (
         <main className="livros-page">
@@ -56,8 +36,7 @@ function Livros() {
             <div className="livros-header">
                 <h1>Livros</h1>
 
-                <button className="btn-novo-livro"
-                    onClick={() => navigate("/livro/novo")}>
+                <button className="btn-novo-livro" onClick={novoLivro}>
                     <Plus size={22} />
                     Novo Livro
                 </button>
@@ -76,8 +55,8 @@ function Livros() {
                         <input
                             type="text"
                             placeholder="Pesquisar por título, autor ou ISBN..."
-                            value={pesquisa}
-                            onChange={(e) => setPesquisa(e.target.value)}
+                            /* value={pesquisa}
+                            onChange={(e) => setPesquisa(e.target.value)} */
                         />
                     </div>
 
@@ -90,7 +69,6 @@ function Livros() {
                             <option>Ficção</option>
                             <option>Ficção Científica</option>
                             <option>Religioso</option>
-                            <option>Fábula</option>
                         </select>
 
                         <ChevronDown size={20} />
@@ -133,7 +111,7 @@ function Livros() {
                         </thead>
 
                         <tbody>
-                            {livrosFiltrados.map((livro) => (
+                            {livros.map((livro) => (
                                 <tr key={livro.id}>
 
                                     <td>{livro.id}</td>
@@ -165,7 +143,7 @@ function Livros() {
                                             }
                                         >
                                             <span className="status-bolinha"></span>
-                                            {livro.status}
+                                           {/*  {livro.status} */}
                                         </span>
                                     </td>
 
@@ -174,7 +152,7 @@ function Livros() {
 
                                             <button
                                                 className="btn-editar"
-                                                onClick={() => editarLivro(livro.id)}
+                                               /*  onClick={() => editarLivro(livro.id)} */
                                                 title="Editar"
                                             >
                                                 <Pencil size={19} />
@@ -182,7 +160,7 @@ function Livros() {
 
                                             <button
                                                 className="btn-excluir"
-                                                onClick={() => excluirLivro(livro.id)}
+                                               /*  onClick={() => excluirLivro(livro.id)} */
                                                 title="Excluir"
                                             >
                                                 <Trash2 size={19} />
@@ -227,4 +205,4 @@ function Livros() {
     );
 }
 
-export default Livros;
+export default Livros; -->

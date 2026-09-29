@@ -10,10 +10,13 @@ import Usuarios from "./pages/Usuarios";
 import NovoUsuario from "./pages/NovoUsuario";
 import Relatorios from "./pages/Relatorios";
 import Reservas from "./pages/reservas";
+import EditarUser from "./pages/EditarUser";
+import NovoLivro from "./pages/NovoLivro";
 
 
 
 export function App() {
+  
   return (
     <BrowserRouter>
       <Routes>
@@ -27,6 +30,8 @@ export function App() {
           <Route path="livros" element={<Livros />} />
           <Route path="usuarios" element={<Usuarios />} />
           <Route path="usuario/novousuario" element={<NovoUsuario />} />
+          <Route path="usuario/editar/:id" element={<EditarUser />} />
+          <Route path="livro/novo" element={<NovoLivro />} />
           <Route path="relatorios" element={<Relatorios />} />
           <Route path="reservas" element={<Reservas />} />
 

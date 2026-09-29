@@ -17,3 +17,18 @@ body {
   color: var(--text-color);
   min-height: 100vh;
 }
+@media (max-width: 768px) {
+    .app {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: static;
+    }
+
+    main {
+        padding: 14px;
+    }
+}

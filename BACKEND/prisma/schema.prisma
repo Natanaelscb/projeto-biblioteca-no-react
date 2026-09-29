@@ -19,11 +19,11 @@ model Livro {
     id                      Int     @id @default(autoincrement())
     titulo                  String
     autor                   String
-    isbn                    String @unique
     categoria               String?
     anoPublicado            Int?
     quantidade              Int
     quantidadeDisponivel    Int
+    fotoUrl              String?
 
     emprestimos             Emprestimo[]
 

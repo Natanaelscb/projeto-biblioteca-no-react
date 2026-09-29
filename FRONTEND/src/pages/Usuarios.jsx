@@ -1,5 +1,7 @@
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { buscarUsuarios } from "../services/usuariosApi";
+import { deletarUsuario } from "../services/usuariosApi";
+import { useEffect, useState } from "react";
 import {
     Search,
     Plus,
@@ -15,66 +17,34 @@ import "./Usuarios.css";
 
 
 function Usuarios() {
-    const [busca, setBusca] = useState("");
     const navigate = useNavigate();
 
-    const usuarios = [
-        {
-            matricula: 2450114,
-            nome: "Ana Silva",
-            email: "adminh@library.com",
-            telefone: "+98-6382-6887",
-            status: "Ativo",
-        },
-        {
-            matricula: 2,
-            nome: "Carlos Mendes",
-            email: "carlos@us@email.com",
-            telefone: "+98-99419168",
-            status: "Inativo",
-        },
-        {
-            matricula: 36,
-            nome: "Beatriz Costa",
-            email: "beatriz@osta@gmail.com",
-            telefone: "+96-29301025",
-            status: "Inativo",
-        },
-        {
-            matricula: 40,
-            nome: "Jora Silva",
-            email: "beatriz@o@library.com",
-            telefone: "+98-99419267",
-            status: "Ativo",
-        },
-        {
-            matricula: 50,
-            nome: "Árda Mendes",
-            email: "beatriz@birva@gmail.com",
-            telefone: "+90-99419169",
-            status: "Ativo",
-        },
-        {
-            matricula: 65,
-            nome: "Badriz Costa",
-            email: "beatriz@batriz@email.com",
-            telefone: "+92-88209286",
-            status: "Inativo",
-        },
-        {
-            matricula: 70,
-            nome: "Beatriz Costa",
-            email: "beatrizjt@library.com",
-            telefone: "+98-99479918",
-            status: "Inativo",
-        },
-    ];
+    const [usuarios, setUsuarios] = useState([])
 
-    const usuariosFiltrados = usuarios.filter((usuario) =>
-        `${usuario.nome} ${usuario.email}`
-            .toLowerCase()
-            .includes(busca.toLowerCase())
-    );
+    useEffect(() => {
+        buscarUsuarios().then((dados) => {
+            console.log(dados);
+            setUsuarios(dados)
+        })
+
+    }, []);
+
+    async function handleDeletar(id) {
+        if (!window.confirm("Tem certeza que deseja excluir este usuário?")) {
+            return;
+        }
+        try {
+            await deletarUsuario(id);
+
+            setUsuarios((usuariosAtuais) =>
+                usuariosAtuais.filter((usuario) => usuario.id !== id)
+            );
+            console.log("Usuário excluído");
+        } catch (erro) {
+            console.error(erro)
+        }
+
+    };
 
     return (
         <main className="usuarios-page">
@@ -88,8 +58,7 @@ function Usuarios() {
 
                 <button className="btn-novo-usuario"
                     onClick={() => navigate("/usuario/novousuario")}
-                    >
-                    <Plus size={19} />
+                >
                     Novo Usuário
                 </button>
             </header>
@@ -102,8 +71,8 @@ function Usuarios() {
                     <input
                         type="text"
                         placeholder="Pesquisar por nome, email..."
-                        value={busca}
-                        onChange={(e) => setBusca(e.target.value)}
+                    /*  value={busca}
+                     onChange={(e) => setBusca(e.target.value)} */
                     />
                 </div>
 
@@ -168,15 +137,15 @@ function Usuarios() {
                         </thead>
 
                         <tbody>
-                            {usuariosFiltrados.map((usuario) => (
-                                <tr key={usuario.matricula}>
+                            {usuarios.map((usuario) => (
+                                <tr key={usuario.matricula} >
 
                                     <td>{usuario.matricula}</td>
 
                                     <td>
                                         <div className="foto-usuario">
                                             <span>
-                                                {usuario.nome.charAt(0)}
+                                                {/*  {usuario.nome.charAt(0)} */}
                                             </span>
                                         </div>
                                     </td>
@@ -208,6 +177,7 @@ function Usuarios() {
                                             <button
                                                 className="acao editar"
                                                 title="Editar"
+                                                onClick={() => navigate(`/usuario/editar/${usuario.id}`)}
                                             >
                                                 <Pencil size={16} />
                                             </button>
@@ -215,6 +185,7 @@ function Usuarios() {
                                             <button
                                                 className="acao excluir"
                                                 title="Excluir"
+                                                onClick={() => handleDeletar(usuario.id)}
                                             >
                                                 <Trash2 size={16} />
                                             </button>

@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
 import {
     Search,
     Plus,
@@ -18,58 +19,16 @@ function Emprestimos() {
 
     const navigate = useNavigate();
 
-    const emprestimos = [
-        {
-            usuario: "João Silva",
-            email: "joao.silva@email.com",
-            livro: "Clean Code",
-            autor: "Robert C. Martin",
-            capa: "https://covers.openlibrary.org/b/title/Clean%20Code-M.jpg",
-            data: "10/06/2026",
-            devolucao: "17/06/2026",
-            status: "Ativo"
-        },
-        {
-            usuario: "Maria Souza",
-            email: "maria.souza@email.com",
-            livro: "Java Básico",
-            autor: "Herbert Schildt",
-            capa: "https://covers.openlibrary.org/b/title/Java-M.jpg",
-            data: "08/06/2026",
-            devolucao: "15/06/2026",
-            status: "Atrasado"
-        },
-        {
-            usuario: "Pedro Lima",
-            email: "pedro.lima@email.com",
-            livro: "Python para Todos",
-            autor: "Luiz Otávio Miranda",
-            capa: "https://covers.openlibrary.org/b/title/Python-M.jpg",
-            data: "12/06/2026",
-            devolucao: "19/06/2026",
-            status: "Ativo"
-        },
-        {
-            usuario: "Ana Pereira",
-            email: "ana.pereira@email.com",
-            livro: "O Poder do Hábito",
-            autor: "Charles Duhigg",
-            capa: "https://covers.openlibrary.org/b/title/The%20Power%20of%20Habit-M.jpg",
-            data: "01/06/2026",
-            devolucao: "08/06/2026",
-            status: "Devolvido"
-        },
-        {
-            usuario: "Lucas Almeida",
-            email: "lucas.almeida@email.com",
-            livro: "Mindset",
-            autor: "Carol S. Dweck",
-            capa: "https://covers.openlibrary.org/b/title/Mindset-M.jpg",
-            data: "03/06/2026",
-            devolucao: "10/06/2026",
-            status: "Próximo do vencimento"
-        }
-    ];
+    const [emprestimos, setEmprestimos] = useState([])
+
+    /* useEffect(() => {
+            buscarEmprestimos().then((dados) => {
+                console.log(dados);
+                setEmprestimos(dados)
+            })
+    
+        }, []); */
+    
 
     return (
         <main className="emprestimos-page">

@@ -1,6 +1,8 @@
-import { criarUsuario } from "../services/usuariosApi";
+import { atualizarUsuario, buscarUsuario } from "../services/usuariosApi";
+import { useNavigate } from "react-router-dom";
 import "./NovoUsuario.css";
-import { useState } from "react";
+import { useParams } from "react-router-dom";
+import { useState, useEffect } from "react";
 import {
 
     Hash,
@@ -12,13 +14,36 @@ import {
 } from "lucide-react";
 
 
-function NovoUsuario() {
+function EditarUser() {
+    const navigate = useNavigate();
+
+    const { id } = useParams();
+
     const [mensagem, setMensagem] = useState("")
     const [matricula, setMatricula] = useState("");
     const [nome, setNome] = useState("");
     const [email, setEmail] = useState("");
     const [telefone, setTelefone] = useState("");
     const [status, setStatus] = useState("ativo");
+
+    useEffect(() => {
+        async function carregarUsuario() {
+            try {
+                const usuario = await buscarUsuario(id)
+
+                setMatricula(usuario.matricula);
+                setNome(usuario.nome);
+                setEmail(usuario.email);
+                setTelefone(usuario.telefone);
+                setStatus(usuario.status);
+
+            } catch (erro) {
+                console.log(erro);
+            }
+        }
+        carregarUsuario();
+
+    }, [id]);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -32,17 +57,11 @@ function NovoUsuario() {
                 telefone,
                 status
             }
-            const dados = await criarUsuario(usuario);
+            const dados = await atualizarUsuario(id, usuario);
 
             console.log(dados);
-            console.log("Usuario foi cadastrado")
-            setMensagem("Usuário cadastrado com sucesso!");
-
-            setMatricula("");
-            setNome("");
-            setEmail("");
-            setTelefone("");
-            setStatus("ativo");
+            console.log("Usuario foi Atualizado")
+            setMensagem("Usuário atualizado com sucesso!");
 
         } catch (erro) {
             console.log(erro);
@@ -56,7 +75,7 @@ function NovoUsuario() {
             <div className="novo-usuario-header">
 
                 <div>
-                    <h1>Novo Usuário</h1>
+                    <h1>Atualizar Usuário</h1>
 
                     <div className="novo-usuario-breadcrumb">
                         <button type="button">
@@ -65,7 +84,7 @@ function NovoUsuario() {
 
                         <ChevronRight size={16} />
 
-                        <span>Novo Usuário</span>
+                        <span>Atualizar Usuário</span>
                     </div>
                 </div>
             </div>
@@ -78,8 +97,7 @@ function NovoUsuario() {
                     <h2>Informações do Usuário</h2>
 
                     <p>
-                        Preencha os campos abaixo com as informações do novo integrante
-                        da biblioteca.
+                        Preencha os campos abaixo com as informações que queira atualizar.
                     </p>
                 </div>
 
@@ -255,6 +273,7 @@ function NovoUsuario() {
                         <button
                             type="button"
                             className="novo-usuario-cancelar"
+                            onClick={() => navigate("/usuarios")}
                         >
                             Cancelar
                         </button>
@@ -264,7 +283,7 @@ function NovoUsuario() {
                             className="novo-usuario-salvar"
                         >
                             <CheckCircle size={18} />
-                            Salvar Usuário
+                            Salvar Atualizações
                         </button>
 
                     </div>
@@ -278,5 +297,5 @@ function NovoUsuario() {
     );
 }
 
-export default NovoUsuario;
+export default EditarUser;
 

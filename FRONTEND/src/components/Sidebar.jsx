@@ -8,7 +8,6 @@ import {
 const menuItems = [
     { to: "/", label: "Início", icon: Home, end: true },
     { to: "/emprestimos", label: "Empréstimos", icon: ArrowLeftRight },
-    
     { to: "/devolucoes", label: "Devoluções", icon: RotateCcw },
     { to: "/livros", label: "Livros", icon: BookOpen },
     { to: "/usuarios", label: "Usuários", icon: Users },
